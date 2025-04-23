@@ -1,5 +1,4 @@
 import express, {Request, Response} from 'express';
-import bodyParser from "body-parser";
 const app = express();
 
 const PORT = 5000;
@@ -8,10 +7,8 @@ const products = [{id:1, title:'tomato'},{id:2, title:'orange'}]
 const addresses = [{id:1, value: 'Nezaleznasti 12'}, {id: 2, value:'Selickaga 11'}]
 
 // Middleware для обработки JSON-запросов
-app.use(express.json());
-const parserMiddleWare = bodyParser({})
-app.use(parserMiddleWare)
-// Роут GET /
+app.use(express.json()); // Для JSON данных
+app.use(express.urlencoded({ extended: true })); // Для форм
 app.get('/products', (req: Request, res: Response) => {
     // query параметр ? с фильтрацией
     if (req.query.title) {

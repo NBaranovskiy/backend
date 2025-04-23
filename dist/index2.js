@@ -4,16 +4,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const body_parser_1 = __importDefault(require("body-parser"));
 const app = (0, express_1.default)();
 const PORT = 5000;
 const products = [{ id: 1, title: 'tomato' }, { id: 2, title: 'orange' }];
 const addresses = [{ id: 1, value: 'Nezaleznasti 12' }, { id: 2, value: 'Selickaga 11' }];
 // Middleware для обработки JSON-запросов
-app.use(express_1.default.json());
-const parserMiddleWare = (0, body_parser_1.default)({});
-app.use(parserMiddleWare);
-// Роут GET /
+app.use(express_1.default.json()); // Для JSON данных
+app.use(express_1.default.urlencoded({ extended: true })); // Для форм
 app.get('/products', (req, res) => {
     // query параметр ? с фильтрацией
     if (req.query.title) {
