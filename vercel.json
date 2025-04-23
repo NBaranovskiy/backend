@@ -1,0 +1,19 @@
+{
+
+   "version": 2,
+
+   "name": "backend simple express rest api",
+
+   "builds": [
+
+      { "src": "index.ts", "use": "@vercel/node" }
+
+   ],
+
+   "routes": [
+
+      { "src": "/(.*)", "dest": "/app.js" }
+
+   ]
+
+}
