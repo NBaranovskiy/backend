@@ -1,12 +1,12 @@
 {
 
-   "version": 2,
+   "version": 3,
 
    "name": "backend simple express rest api",
 
    "builds": [
 
-      { "src": "index.ts", "use": "@vercel/node" }
+      { "src": "index2.ts", "use": "@vercel/node" }
 
    ],
 
