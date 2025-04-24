@@ -23,7 +23,7 @@ app.get('/products', (req, res) => {
 });
 // :productTitle URI параметр
 app.get('/products/:id', (req, res) => {
-    const product = products.find(p => p.id === +req.params.productTitle);
+    const product = products.find(p => p.id === +req.params.id);
     if (!product) {
         res.send(404);
     }

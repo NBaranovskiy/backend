@@ -8,7 +8,7 @@ const addresses = [{id:1, value: 'Nezaleznasti 12'}, {id: 2, value:'Selickaga 11
 
 // Middleware для обработки JSON-запросов
 app.use(express.json()); // Для JSON данных!
-app.use(express.urlencoded({ extended: true })); // Для форм!
+app.use(express.urlencoded({ extended: true })); // Для форм!!!
 app.get('/products', (req: Request, res: Response) => {
     // query параметр ? с фильтрацией
     if (req.query.title) {
@@ -20,7 +20,7 @@ app.get('/products', (req: Request, res: Response) => {
 });
 // :productTitle URI параметр
 app.get('/products/:id', (req: Request, res: Response) => {
-    const product = products.find(p => p.id === +req.params.productTitle);
+    const product = products.find(p => p.id === +req.params.id);
     if (!product){
         res.send(404)
     } else {
