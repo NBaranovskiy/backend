@@ -10,7 +10,7 @@ const products = [{ id: 1, title: 'tomato' }, { id: 2, title: 'orange' }];
 const addresses = [{ id: 1, value: 'Nezaleznasti 12' }, { id: 2, value: 'Selickaga 11' }];
 // Middleware для обработки JSON-запросов
 app.use(express_1.default.json()); // Для JSON данных!
-app.use(express_1.default.urlencoded({ extended: true })); // Для форм!
+app.use(express_1.default.urlencoded({ extended: true })); // Для форм!!!
 app.get('/products', (req, res) => {
     // query параметр ? с фильтрацией
     if (req.query.title) {
